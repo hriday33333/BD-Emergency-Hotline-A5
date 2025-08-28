@@ -7,6 +7,11 @@ for(let cartButton of cartBtn) {
 
         let textNumber = cartButton.parentNode.parentNode.children[3].innerText
         
+        const now = new Date();
+    let hours = now.getHours().toString().padStart(2, '0');
+    let minutes = now.getMinutes().toString().padStart(2, '0');
+    let seconds = now.getSeconds().toString().padStart(2, '0');
+    let currentTime = `${hours}:${minutes}:${seconds}`;
         let cartContainer = document.getElementById('cart-container');
         let newCart = document.createElement("div");
         newCart.innerHTML =`
@@ -15,10 +20,16 @@ for(let cartButton of cartBtn) {
                         <h1 class="md:text-lg md:font-bold font-bold text-sm">${textTitle}</h1> 
                         <div class="md:flex justify-between flex items-center">
                             <h4 class=" md:font-semibold font-semibold">${textNumber}</h4>
-                            <h3 class="text-sm">11:36:58 AM</h3>
+                            <h3 class="text-sm">${currentTime}</</h3>
                         </div>
                     </div>
                 </div>`;
                 cartContainer.append(newCart)
     })
 }
+
+
+document.getElementById('clear').addEventListener('click', function(){
+    let cartContainer = document.getElementById('cart-container');
+    cartContainer.innerHTML = "";
+})
