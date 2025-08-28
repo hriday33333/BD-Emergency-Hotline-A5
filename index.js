@@ -1,3 +1,4 @@
+
 let count = 0;
   const cards = document.querySelectorAll(".card");
   const counter = document.getElementById("count");
@@ -8,6 +9,8 @@ let count = 0;
       counter.innerText = count;
       if (card.classList.contains("fa-heart")) {
         card.style.color = "red";
+        
       }
     };
   }
+
