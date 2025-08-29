@@ -12,9 +12,20 @@ getElementsByClassName: Selects all elements with a specific class. You can acce
 querySelector: Returns the first matching element.
 
 querySelectorAll: Returns all matching elements as a static NodeList.
+
+
+
+
+
+
+
     **********************************
     **********************************
     **********************************
+
+
+
+
 
 
 
@@ -35,9 +46,17 @@ appendChild
 document.body.appendChild(newDiv); adds it to the end of <body>
 
 
+
+
+
+
 **********************************
     **********************************
     **********************************
+
+
+
+
 
 
 ***** q: no:3 *****
@@ -51,9 +70,14 @@ When an event (like click) occurs on an element, the event first triggers on tha
 This process is called “bubbling up” (like a bubble rising upward).
 
 
+
+
+
 **********************************
     **********************************
     **********************************
+
+
 
 
 
@@ -83,9 +107,12 @@ The code becomes shorter and easier to maintain.
 
 
 
+
 **********************************
     **********************************
     **********************************
+
+
 
 
 
