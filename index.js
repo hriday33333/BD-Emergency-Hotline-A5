@@ -1,16 +1,25 @@
 
-let count = 0;
-  const cards = document.querySelectorAll(".card");
-  const counter = document.getElementById("count");
+// let count = 0;
+//   const cards = document.querySelectorAll(".card");
+//   const counter = document.getElementById("count");
 
-  for (let card of cards) {
-    card.onclick = function () {
-      count++;
-      counter.innerText = count;
-      if (card.classList.contains("fa-heart")) {
-        card.style.color = "red";
+//   for (let card of cards) {
+//     card.onclick = function () {
+//       count++;
+//       counter.innerText = count;
+//       if (card.classList.contains("fa-heart")) {
+//         card.style.color = "red";
         
-      }
-    };
-  }
+//       }
+//     };
+//   }
 
+
+
+    let counter = 0;
+
+    function heartClick() {
+      counter++;            
+      document.getElementById('counted').textContent = counter; // দেখাও
+    }
+  
