@@ -3,7 +3,7 @@ let counter = 0;
 
 function heartClick() {
   counter++;
-  document.getElementById('counted').textContent = counter; // দেখাও
+  document.getElementById('counted').textContent = counter; 
 }
 
 
