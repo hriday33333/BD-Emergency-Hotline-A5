@@ -89,7 +89,7 @@ Answer ৫:
 Purpose: কোনো element-এর default behavior বন্ধ করে দেয়।
 Example use cases:
 Form submit বন্ধ করা
-Anchor link (<a href="#">) click করলে পেজ রিফ্রেশ না হওয়া
+Anchor link click করলে পেজ রিফ্রেশ না হওয়া
 Right-click করলে context menu আসা বন্ধ করা
 
 ২, event.stopPropagation()
