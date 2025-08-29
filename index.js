@@ -89,10 +89,10 @@ for (const button of buttons) {
         copyCount++;
         counterDiv.textContent = copyCount;
 
-        alert('নম্বর কপি হয়েছে: ' + text);
+        alert('Number copied✅' + text);
       })
       .catch(err => {
-        console.error('কপি করতে ব্যর্থ:', err);
+        console.error('Failed to copy the number:', err);
       });
   });
 }
