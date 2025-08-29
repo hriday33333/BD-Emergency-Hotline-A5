@@ -1,40 +1,40 @@
 // heard icon this
-    let counter = 0;
+let counter = 0;
 
-    function heartClick() {
-      counter++;            
-      document.getElementById('counted').textContent = counter; // দেখাও
-    }
-  
-
+function heartClick() {
+  counter++;
+  document.getElementById('counted').textContent = counter; // দেখাও
+}
 
 
 
 
-    // create element this
-    let coins = 100; 
+
+
+// create element this
+let coins = 100;
 document.getElementById("coins-display").innerText = coins;
 
 const cartBtn = document.getElementsByClassName('card-btn');
 
 for (let cartButton of cartBtn) {
   cartButton.addEventListener("click", function () {
-    if (coins >= 20) { 
+    if (coins >= 20) {
       coins -= 20;
       document.getElementById("coins-display").innerText = coins;
       let subTitle = cartButton.parentNode.parentNode.children[2].innerText;
       let subNum = cartButton.parentNode.parentNode.children[3].innerText;
 
-      alert(`✔ Call Done!
-Subtitle: ${subTitle}
-Number: ${subNum}`);
+      alert(`📞 calling !  ${subTitle}  ${subNum}.....`);
+
+
 
 
 
       let textTitle = cartButton.parentNode.parentNode.children[1].innerText;
       let textNumber = cartButton.parentNode.parentNode.children[3].innerText;
 
-      
+
       const now = new Date();
       let hours = now.getHours();
       let minutes = now.getMinutes().toString().padStart(2, '0');
@@ -59,7 +59,7 @@ Number: ${subNum}`);
         </div>`;
       cartContainer.append(newCart);
     } else {
-      alert("❌ আপনার পর্যাপ্ত কয়েন নেই কল করতে কমপক্ষে ২০কয়েন লাগবে");
+      alert("❌ You don’t have enough coins. You need at least 20 coins to make a call");
     }
   });
 }
@@ -74,27 +74,27 @@ document.getElementById('clear').addEventListener('click', function () {
 
 // copy past function
 
-    let copyCount = 0;
-    const counterDiv = document.getElementById('counter');
-    
-    const buttons = document.getElementsByClassName('btn');
+let copyCount = 0;
+const counterDiv = document.getElementById('counter');
 
-    for (const button of buttons) {
-      button.addEventListener('click', () => {
-        const card = button.closest('.card');
-        const text = card.getElementsByClassName('text-to-copy')[0].textContent;
+const buttons = document.getElementsByClassName('btn');
 
-        navigator.clipboard.writeText(text)
-          .then(() => {
-            copyCount++; 
-            counterDiv.textContent =  copyCount;
-            
-            alert('নম্বর কপি হয়েছে: ' + text);
-          })
-          .catch(err => {
-            console.error('কপি করতে ব্যর্থ:', err);
-          });
+for (const button of buttons) {
+  button.addEventListener('click', () => {
+    const card = button.closest('.card');
+    const text = card.getElementsByClassName('text-to-copy')[0].textContent;
+
+    navigator.clipboard.writeText(text)
+      .then(() => {
+        copyCount++;
+        counterDiv.textContent = copyCount;
+
+        alert('নম্বর কপি হয়েছে: ' + text);
+      })
+      .catch(err => {
+        console.error('কপি করতে ব্যর্থ:', err);
       });
-    }
-  
+  });
+}
+
 
