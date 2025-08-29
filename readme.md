@@ -1,36 +1,38 @@
 
+***** q: no:1 *****
+1. What is the difference between getElementById, getElementsByClassName, and querySelector / querySelectorAll?
 
-***** q: no:১ *****
-১, What is the difference between **getElementById, getElementsByClassName, and querySelector / querySelectorAll**?
+***** ans to the q: no:1 *****
+Answer 1: Difference
 
-***** ans to the q: no:১*****
- Answer ১: পার্থক্য
-১. getElementById: একটি element কে তার id দিয়ে বাছাই করে  id অবশ্যই পেজে একটিমাত্র হওয়া উচিত।
-যদি এমন কোনো element না থাকে, তবে এটি null রিটার্ন করে।
+getElementById: Selects a single element by its id. The id must be unique in the page. If no such element exists, it returns null.
 
-২. getElementsByClassName:একটি নির্দিষ্ট class-যুক্ত সকল element বাছাই করে elements[0], elements[1] দিয়ে access করা যায় ।
+getElementsByClassName: Selects all elements with a specific class. You can access them using elements[0], elements[1], etc.
 
-৩. querySelector; প্রথম matching element রিটার্ন করে
-৪, সকল matching element রিটার্ন করে, static NodeList হিসেবে।
+querySelector: Returns the first matching element.
 
+querySelectorAll: Returns all matching elements as a static NodeList.
     **********************************
     **********************************
     **********************************
 
 
 
-***** q: no:২ *****
-২, How do you **create and insert a new element into the DOM**?
+***** q: no:2 *****
+2. How do you create and insert a new element into the DOM?
 
-***** ans to the q: no:২*****
-Answer ২: document.createElement(tagName) ব্যবহার করে একটি নতুন element তৈরি করা যায়। tagName হতে পারে "div", "p", "span", "button" ইত্যাদি।
-নতুন element তৈরি করার পরে, তার মধ্যে লেখা, class বা attribute যোগ করা যায়।
-element DOM-এ যোগ করা
+***** ans to the q: no:2 *****
+Answer 2:
+You can create a new element using document.createElement(tagName).
+The tagName can be "div", "p", "span", "button", etc.
 
-নিচের  method ব্যবহার করা যায়:
+After creating a new element, you can add text, classes, or attributes to it.
 
- (appendChild)
-document.body.appendChild(newDiv); <body> এর শেষে যোগ
+To insert the element into the DOM, the following method can be used:
+
+appendChild
+
+document.body.appendChild(newDiv); adds it to the end of <body>
 
 
 **********************************
@@ -38,16 +40,15 @@ document.body.appendChild(newDiv); <body> এর শেষে যোগ
     **********************************
 
 
-***** q: no:৩ *****
-৩, What is **Event Bubbling** and how does it work?
+***** q: no:3 *****
+3. What is Event Bubbling and how does it work?
 
-***** ans to the q: no:৩*****
-Answer ৩:
-Event Bubbling হলো JavaScript-এ event propagation-এর একটি ধাপ।
-এটা যখন কোনো element-এ event (click) ঘটে, তখন সেই event প্রথমে ওই element-এ trigger হয় → তারপর তার parent → তার grandparent → এভাবে উপরের দিকে DOM tree-এর root পর্যন্ত ছড়িয়ে যায়।
+***** ans to the q: no:3 *****
+Answer 3:
+Event Bubbling is a phase of event propagation in JavaScript.
+When an event (like click) occurs on an element, the event first triggers on that element → then on its parent → then on its grandparent → and so on, spreading upward through the DOM tree until it reaches the root.
 
-একে বলে “bubbling up” (bubble এর মতো উপরে উঠতে থাকে)।
-
+This process is called “bubbling up” (like a bubble rising upward).
 
 
 **********************************
@@ -57,25 +58,26 @@ Event Bubbling হলো JavaScript-এ event propagation-এর একটি �
 
 
 
-***** q: no:৪ *****
-৪. What is **Event Delegation** in JavaScript? Why is it useful?
+***** q: no:4 *****
+4. What is Event Delegation in JavaScript? Why is it useful?
 
-***** ans to the q: no:৪*****
-Answer ৪:
-Event Delegation হলো এমন একটি টেকনিক যেখানে আমরা একটা parent element-এ event listener বসাই, আর সেই parent-এর মধ্যে থাকা multiple child elements-এর event handle করি।
-মানে, প্রত্যেক child element-এ আলাদা আলাদা listener বসানোর দরকার নেই।
-Event bubbling-এর কারণে event parent পর্যন্ত পৌঁছে যায়, তাই parent থেকেই child কে চিহ্নিত করা যায়।
+***** ans to the q: no:4 *****
+Answer 4:
+Event Delegation is a technique where we add an event listener to a parent element, and handle the events of multiple child elements from that parent.
+That means we don’t need to attach separate listeners to each child element.
+Because of event bubbling, the event reaches the parent, so the parent can identify which child triggered it.
 
-  *** কেন এটা জনপ্রিয় ***
- Performance
-অনেকগুলো element থাকলে প্রত্যেকটায় আলাদা listener বসানোর দরকার নেই → একটাই listener parent-এ বসালেই হবে।
+*** Why it is useful ***
+
+Performance
+When there are many elements, we don’t need to add separate listeners to each of them → just one listener on the parent is enough.
 
 Dynamic Elements
-যদি DOM-এ পরে নতুন element যোগ হয়, তাহলেও event কাজ করবে।
-যেমন: নতুন <li> add করলে সেটাতেও auto event কাজ করবে (কারণ parent listener আছে)।
-Cleaner Code
-কোড ছোট ও maintain করা সহজ হয়
+If new elements are added to the DOM later, the event will still work.
+For example, if a new <li> is added, it will automatically work with the parent’s listener.
 
+Cleaner Code
+The code becomes shorter and easier to maintain.
 
 
 
@@ -87,22 +89,20 @@ Cleaner Code
 
 
 
-***** q: no:৫ *****
-৫, What is the difference between **preventDefault() and stopPropagation()** methods?
+***** q: no:5 *****
+5. What is the difference between preventDefault() and stopPropagation() methods?
 
-***** ans to the q: no:৫*****
-Answer ৫:
+***** ans to the q: no:5 *****
+Answer 5:
 
-১, event.preventDefault()
-Purpose: কোনো element-এর default behavior বন্ধ করে দেয়।
+event.preventDefault()
+Purpose: Stops the default behavior of an element.
 Example use cases:
-Form submit বন্ধ করা
-Anchor link click করলে পেজ রিফ্রেশ না হওয়া
-Right-click করলে context menu আসা বন্ধ করা
-
-২, event.stopPropagation()
-Purpose: Event propagation (bubbling বা capturing) বন্ধ করে দেয়।
-মানে: Event আর parent elements-এ উঠবে (বা নামবে) না।
-
+Preventing form submission
+Preventing a page refresh when an anchor link is clicked
+Preventing the right-click context menu from appearing
+event.stopPropagation()
+Purpose: Stops event propagation (bubbling or capturing).
+Meaning: The event will no longer travel up (or down) to parent elements.
 ---
 
